@@ -1,5 +1,5 @@
 [package]
-name = "emulator"
+name = "scom-emulator"
 version = "0.1.0"
 authors = ["Sindre Stephansen <sindre@sindrestephansen.com>"]
 edition = "2018"
