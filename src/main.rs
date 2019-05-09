@@ -1,11 +1,16 @@
+use std::fs;
+
 mod utils;
+mod machine;
 
 
 fn main() {
     let settings = utils::args::parse_arguments();
 
-    println!("Verbosity level: {}", settings.verbose);
-    println!("Log to stdout: {}", settings.log_to_stdout);
-    println!("Log file: {}", settings.log_file.unwrap_or("-".to_string()));
-    println!("Input file: {}", settings.in_file.unwrap_or("-".to_string()));
+    let input = fs::read_to_string(&settings.in_file)
+        .expect("Something went wrong while reading the input file")
+        .into_bytes();
+
+    let mut machine = machine::scom::SCOM::new(&settings);
+    machine.load_program(&input);
 }
