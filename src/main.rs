@@ -1,8 +1,7 @@
 use std::fs;
 
-mod utils;
 mod machine;
-
+mod utils;
 
 fn main() {
     let settings = utils::args::parse_arguments();
