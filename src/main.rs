@@ -12,4 +12,5 @@ fn main() {
 
     let mut machine = machine::scom::SCOM::new(&settings);
     machine.load_program(&input);
+    machine.run();
 }

@@ -1,3 +1,4 @@
 pub mod scom;
-pub mod memory;
 pub mod registers;
+pub mod io;
+pub mod instructions;
